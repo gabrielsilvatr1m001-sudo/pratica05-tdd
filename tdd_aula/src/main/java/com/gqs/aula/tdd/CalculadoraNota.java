@@ -11,9 +11,12 @@ public class CalculadoraNota {
     }
 
     public static final double NOTA_MINIMA_APROVACAO = 70;
-
     public boolean estaAprovadoPorNota(double notaFinal) {
         return notaFinal >= NOTA_MINIMA_APROVACAO;
+    }
+    public static final double FREQUENCIA_MINIMA_APROVACAO = 75;
+    public boolean estaAprovadoPorFrequencia(double frequenciaFinal) {
+        return frequenciaFinal >= FREQUENCIA_MINIMA_APROVACAO;
     }
 
     private void validarNota(double nota, double notaMaxima, String nomeAvaliacao) {
@@ -24,22 +27,17 @@ public class CalculadoraNota {
     }
 
     public String situacao(double notaFinal, double frequencia) { // "APROVADO" ou "REPROVADO"
-       /* String resultado;
+        String resultado;
+
         if (notaFinal >= 70 && frequencia >= 75) {
-            resultado = 'Aprovado';
+            resultado = "Aprovado";
         }
         else{    
             throw new IllegalArgumentException("Para aprovar a nota deve ser maior ou igual a 70 e a frequencia deve ser maior ou igual a 75");
         }
 
-        if (a2 < 0 || a2 > 30) {
-            throw new IllegalArgumentException("A2 deve estar entre 0 e 30");
-        }
-        if (a3 < 0 || a3 > 0) {
-            throw new IllegalArgumentException("A3 deve estar entre 0 e 40");
-        }
-      */
-        return ""; 
+        
+        return resultado; 
 
     } 
 
@@ -48,4 +46,10 @@ public class CalculadoraNota {
     } */
 
 
+private void validarFrequencia(double frequencia) {
+        if (frequencia < 75) {
+            throw new IllegalArgumentException(
+                    "A sua frequencia deve estar acima de 75. A sua frequencia atual é" + frequencia);
+        }
+    }
 }
