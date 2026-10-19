@@ -23,6 +23,29 @@ public class CalculadoraNota {
         }
     }
 
+    public String situacao(double notaFinal, double frequencia) { // "APROVADO" ou "REPROVADO"
+       /* String resultado;
+        if (notaFinal >= 70 && frequencia >= 75) {
+            resultado = 'Aprovado';
+        }
+        else{    
+            throw new IllegalArgumentException("Para aprovar a nota deve ser maior ou igual a 70 e a frequencia deve ser maior ou igual a 75");
+        }
+
+        if (a2 < 0 || a2 > 30) {
+            throw new IllegalArgumentException("A2 deve estar entre 0 e 30");
+        }
+        if (a3 < 0 || a3 > 0) {
+            throw new IllegalArgumentException("A3 deve estar entre 0 e 40");
+        }
+      */
+        return ""; 
+
+    } 
+
+   /* public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
+
+    } */
 
 
 }
