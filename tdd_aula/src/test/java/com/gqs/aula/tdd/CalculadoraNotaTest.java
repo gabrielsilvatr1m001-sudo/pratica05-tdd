@@ -78,16 +78,21 @@ public class CalculadoraNotaTest {
     @Test
     void deveReprovarComNotaBaixa() {
         CalculadoraNota calc = new CalculadoraNota();
-        assertEquals("REPROVADO", calc.situacao(60, 90));
+        assertEquals("REPROVADO POR NOTA", calc.situacao(60, 90));
     }
 
     @Test
     void deveReprovarPorFrequenciaMesmoComNotaAlta() {
         CalculadoraNota calc = new CalculadoraNota();
-        assertEquals("REPROVADO", calc.situacao(95, 74));
+        assertEquals("REPROVADO POR FALTA", calc.situacao(95, 74));
     }
 
     @Test
+    void deveReprovarPorFaltaMesmoComNotaBaixa() {
+        CalculadoraNota calc = new CalculadoraNota();
+        assertEquals("REPROVADO POR FALTA", calc.situacao(50, 60));
+    }
+    @Test 
     void deveAprovarComFrequenciaExatamente75() {
         CalculadoraNota calc = new CalculadoraNota();
         assertEquals("APROVADO", calc.situacao(70, 75));
