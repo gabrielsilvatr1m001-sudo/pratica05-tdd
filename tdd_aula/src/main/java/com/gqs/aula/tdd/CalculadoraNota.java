@@ -12,21 +12,24 @@ public class CalculadoraNota {
 
     public static final double NOTA_MINIMA_APROVACAO = 70;
     public static final double FREQUENCIA_MINIMA = 75;
-
+    public static final String APROVADO = "APROVADO";
+    public static final String REPROVADO_POR_FALTA = "REPROVADO POR FALTA";
+    public static final String REPROVADO_POR_NOTA = "REPROVADO POR NOTA";
+    
     public boolean estaAprovadoPorNota(double notaFinal) {
         return notaFinal >= NOTA_MINIMA_APROVACAO;
     }
 
     public String situacao(double notaFinal, double frequencia) {
         if (frequencia < FREQUENCIA_MINIMA) {
-            return "REPROVADO POR FALTA";
+            return REPROVADO_POR_FALTA;
         }
 
         if (!estaAprovadoPorNota(notaFinal)) {
-            return "REPROVADO POR NOTA";
+            return REPROVADO_POR_NOTA;
         }
 
-        return "APROVADO";
+        return APROVADO;
     }
 
     public boolean podeFazerAI(double a1, double a2, double a3, double frequencia) {
