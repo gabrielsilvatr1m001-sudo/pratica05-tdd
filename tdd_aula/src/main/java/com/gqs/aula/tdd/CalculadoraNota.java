@@ -25,6 +25,23 @@ public class CalculadoraNota {
         return "REPROVADO";
     }
 
+    public double aplicarAI(double a1, double a2, double a3, double notaAI) {
+        if (notaAI < 0 || notaAI > 30) {
+            throw new IllegalArgumentException("AI deve estar entre 0 e 30");
+        }
+
+        double menorNota = Math.min(a1, a2);
+
+        if (notaAI > menorNota) {
+            if (a1 == menorNota) {
+                a1 = notaAI;
+            } else {
+                a2 = notaAI;
+            }
+        }
+
+        return calcularNotaFinal(a1, a2, a3);
+    }
     private void validarNota(double nota, double notaMaxima, String nomeAvaliacao) {
         if (nota < 0 || nota > notaMaxima) {
             throw new IllegalArgumentException(
